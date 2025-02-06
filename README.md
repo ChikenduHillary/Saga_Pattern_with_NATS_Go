@@ -12,12 +12,12 @@ This project demonstrates implementing the Saga pattern for distributed transact
 ## Project Structure
 
 saga-nats-example/ ── cmd/ ── main/ ── main.go
-├── internal/ ── order/ ── service.go
-│ ├── payment/ ── service.go
-│ ├── inventory/ ── service.go
-│ └── saga/ ── coordinator.go
-│ ├── participant.go
-│ └── types.go
+               ├── internal/ ── order/ ── service.go
+               │           ├── payment/ ── service.go
+               │           ├── inventory/ ── service.go
+               │           └── saga/ ── coordinator.go
+               │                  ├── participant.go
+               │                  └── types.go
 
 ## Implementation Overview
 
