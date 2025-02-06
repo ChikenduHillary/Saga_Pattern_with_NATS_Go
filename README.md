@@ -12,7 +12,6 @@ This project demonstrates implementing the Saga pattern for distributed transact
 ## Project Structure
 
 saga-nats-example/
-├── README.md
 ├── cmd/
 │ └── main/
 │ └── main.go
