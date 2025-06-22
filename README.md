@@ -4,8 +4,34 @@ Welcome! This project is a simple demonstration of the **Saga pattern** for dist
 
 ---
 
+## What is a Saga?
+
+A **Saga** is a design pattern used to manage long-running, multi-step business transactions in distributed systems. Instead of using a single database transaction, a saga breaks the process into a series of smaller, independent steps. Each step is handled by a different service and has a corresponding "compensating action" to undo its work if something goes wrong later in the process.
+
+**Key Points:**
+- Each step in a saga is a local transaction performed by a microservice.
+- If a step fails, previously completed steps are compensated (undone) by running their compensating actions.
+- Sagas help maintain data consistency across multiple services without distributed transactions.
+
+**Example:**
+Booking a trip might involve reserving a flight, a hotel, and a car. If the hotel reservation fails, the system cancels the flight and car reservations to keep everything consistent.
+
+---
+
+## Other Key Definitions
+
+- **Distributed Transaction:** A transaction that involves multiple independent services or databases. Traditional database transactions (ACID) are hard to achieve in such systems, so patterns like Saga are used.
+- **Compensating Action:** An operation that undoes the effects of a previously completed step in a saga. For example, if an order is created but payment fails, the compensating action would cancel the order.
+- **Coordinator:** The component that manages the overall saga, tracks progress, and triggers compensating actions if needed.
+- **Participant:** A service that performs a step in the saga and can also perform a compensating action if required.
+- **NATS Streams (JetStream):** A messaging system used for communication between services. It allows services to publish and subscribe to events reliably.
+
+---
+
 ## Table of Contents
 
+- What is a Saga?
+- Other Key Definitions
 - Features
 - How It Works
 - Prerequisites
