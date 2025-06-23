@@ -9,6 +9,7 @@ Welcome! This project is a simple demonstration of the **Saga pattern** for dist
 A **Saga** is a design pattern used to manage long-running, multi-step business transactions in distributed systems. Instead of using a single database transaction, a saga breaks the process into a series of smaller, independent steps. Each step is handled by a different service and has a corresponding "compensating action" to undo its work if something goes wrong later in the process.
 
 **Key Points:**
+
 - Each step in a saga is a local transaction performed by a microservice.
 - If a step fails, previously completed steps are compensated (undone) by running their compensating actions.
 - Sagas help maintain data consistency across multiple services without distributed transactions.
@@ -71,8 +72,8 @@ Imagine booking a trip: you reserve a flight, a hotel, and a car. If the hotel i
 
 - **Go**: Version 1.21 or higher. [Download Go](https://golang.org/dl/)
 - **NATS Server**: [Download and install NATS Server](https://nats.io/download/nats-io/nats-server/)
-- **Go Modules**:  
-  - `github.com/nats-io/nats.go`  
+- **Go Modules**:
+  - `github.com/nats-io/nats.go`
   - `github.com/google/uuid`
 
 ---
@@ -80,8 +81,9 @@ Imagine booking a trip: you reserve a flight, a hotel, and a car. If the hotel i
 ## Installation
 
 1. **Clone this repository**
+
    ```bash
-   git clone https://github.com/your-username/Saga_Pattern_with_NATS_Go.git
+   git clone https://github.com/ChikenduHillary/Saga_Pattern_with_NATS_Go.git
    cd Saga_Pattern_with_NATS_Go
    ```
 
@@ -96,12 +98,15 @@ Imagine booking a trip: you reserve a flight, a hotel, and a car. If the hotel i
 
 1. **Start the NATS Server**  
    In a terminal, run:
+
    ```bash
    nats-server -js
    ```
+
    This starts NATS with JetStream enabled.
 
 2. **Run the main program**
+
    ```bash
    go run ./cmd/main/main.go
    ```
