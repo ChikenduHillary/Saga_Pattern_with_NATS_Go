@@ -4,13 +4,14 @@ package main
 // It demonstrates how to start a Saga transaction using NATS Streams (JetStream).
 
 import (
-    "encoding/json"
-    "log"
-    // Import the NATS Go client
-    "github.com/nats-io/nats.go"
-    // Import the saga logic and order service
-    "saga-nats-example/internal/saga"
-    "saga-nats-example/internal/order"
+	"encoding/json"
+	"log"
+
+	// Import the NATS Go client
+	"github.com/nats-io/nats.go"
+	// Import the saga logic and order service
+	"saga-pattern/internal/order"
+	"saga-pattern/internal/saga"
 )
 
 func main() {

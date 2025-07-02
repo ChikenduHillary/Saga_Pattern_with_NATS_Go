@@ -38,6 +38,7 @@ Booking a trip might involve reserving a flight, a hotel, and a car. If the hote
 - Prerequisites
 - Installation
 - Running the Example
+- How to Test
 - Example Saga Flow
 - Project Structure
 - Example Code
@@ -113,6 +114,27 @@ Imagine booking a trip: you reserve a flight, a hotel, and a car. If the hotel i
 
 3. **Observe the output**  
    The program will simulate a saga transaction and print logs for each step.
+
+---
+
+## How to Test
+
+The project includes both unit tests (for isolated logic) and integration tests (for the end-to-end flow).
+
+**Prerequisite:** The integration tests require a running NATS server with JetStream enabled. Please ensure the server is running before executing the tests.
+
+```bash
+# Start the NATS server if it's not already running
+nats-server -js
+```
+
+To run all tests, navigate to the project root and execute:
+
+```bash
+go test ./...
+```
+
+You will see output indicating the status of all tests in the `order` and `saga` packages.
 
 ---
 

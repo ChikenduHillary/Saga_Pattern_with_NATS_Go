@@ -1,11 +1,12 @@
 package saga
 
 import (
-    "encoding/json"
-    "fmt"
-    "github.com/nats-io/nats.go"
-    "github.com/google/uuid"
-    "time"
+	"encoding/json"
+	"fmt"
+	"time"
+
+	"github.com/google/uuid"
+	"github.com/nats-io/nats.go"
 )
 
 type Coordinator struct {
@@ -14,7 +15,7 @@ type Coordinator struct {
 }
 
 func NewCoordinator(js nats.JetStreamContext, stream string) (*Coordinator, error) {
-    stream, err := js.AddStream(&nats.StreamConfig{
+    _, err := js.AddStream(&nats.StreamConfig{
         Name:     stream,
         Subjects: []string{fmt.Sprintf("%s.>", stream)},
     })

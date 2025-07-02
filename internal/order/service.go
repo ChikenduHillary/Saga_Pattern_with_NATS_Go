@@ -1,8 +1,8 @@
 package order
 
 import (
-    "encoding/json"
-    "saga-nats-example/internal/saga"
+	"encoding/json"
+	"saga-pattern/internal/saga"
 )
 
 type OrderService struct {
